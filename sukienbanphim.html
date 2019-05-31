@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>sự kiện bàn phím</title>
+</head>
+<body onload="sansang()">
+	<img id="long" src="http://lienminh360.vn/wp-content/uploads/2015/08/MasterYi_Splash_9.jpg" style="position:absolute;left:0; top:0;" height="300" width="300"/>
+	<script>
+		function xulylen() {
+    		var element = document.getElementById("long");
+    		element.style.top = parseInt(element.style.top) - 40 + 'px';
+		}
+		function xulycuong() {
+			var element = document.getElementById("long");
+    		element.style.top = parseInt(element.style.top) + 40 + 'px';
+		}
+		function xylytrai() {
+			var element = document.getElementById("long");
+			element.style.left = parseInt(element.style.left) - 40 + 'px';
+		}
+		function xylyphai() {
+			var element = document.getElementById("long");
+			element.style.left = parseInt(element.style.left) + 40 + 'px';
+		}
+		function dichuyen(evt) {
+    	switch (evt.keyCode) {
+        	case 37:
+            	xylytrai();
+            	break;
+        	case 39:
+            	xylyphai();
+            	break;
+        	case 38:
+            	xulylen();
+            	break;
+        	case 40:
+            	xulycuong();
+            	break;
+    		}
+		}
+		function sansang() {
+    		window.addEventListener('keydown', dichuyen);
+		}
+
+	</script>
+</body>
+</html>
